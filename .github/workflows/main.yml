@@ -1,0 +1,21 @@
+name: Main Branch CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-configs:
+    runs-on: ubuntu-latest
+    name: Validate Agent Configurations
+
+    steps:
+      - name: Deploy ConvAI agents
+        run: |
+          npm install -g @elevenlabs/convai-cli
+          export ELEVENLABS_API_KEY=${{ secrets.ELEVENLABS_API_KEY }}
+          convai sync --env prod --dry-run  # Preview changes
+          convai sync --env prod            # Deploy
+          convai status --env prod          # Verify deployment

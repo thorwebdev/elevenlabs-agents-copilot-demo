@@ -1,0 +1,11 @@
+{
+    "agents": {
+        "Store Assistant": {
+            "prod": {
+                "id": "agent_0401k4azvgw3fg8r5h1apm9e2r5m",
+                "hash": "995b09a9e5c8cd3d8631a1f43fe5bbb3"
+            }
+        }
+    },
+    "tools": {}
+}

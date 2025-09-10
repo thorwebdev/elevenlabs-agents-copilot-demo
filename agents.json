@@ -1,0 +1,8 @@
+{
+    "agents": [
+        {
+            "name": "Store Assistant",
+            "config": "agent_configs/store_assistant.json"
+        }
+    ]
+}
