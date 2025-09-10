@@ -1,0 +1,223 @@
+{
+    "name": "Sales Outbound Agent",
+    "conversation_config": {
+        "asr": {
+            "quality": "high",
+            "provider": "elevenlabs",
+            "user_input_audio_format": "pcm_16000",
+            "keywords": []
+        },
+        "turn": {
+            "turn_timeout": 7,
+            "silence_end_call_timeout": -1,
+            "mode": "turn"
+        },
+        "tts": {
+            "model_id": "eleven_turbo_v2",
+            "voice_id": "21m00Tcm4TlvDq8ikWAM",
+            "supported_voices": [],
+            "agent_output_audio_format": "pcm_16000",
+            "optimize_streaming_latency": 3,
+            "stability": 0.6,
+            "speed": 1.1,
+            "similarity_boost": 0.75,
+            "pronunciation_dictionary_locators": []
+        },
+        "conversation": {
+            "text_only": false,
+            "max_duration_seconds": 900,
+            "client_events": [
+                "audio",
+                "interruption",
+                "agent_response",
+                "user_transcript",
+                "agent_response_correction",
+                "agent_tool_response"
+            ]
+        },
+        "language_presets": {},
+        "agent": {
+            "first_message": "Hi! This is Alex from ElevenLabs. I hope I'm catching you at a good time. I'm reaching out because I noticed your interest in AI voice technology. I'd love to share how ElevenLabs can help transform your business with our cutting-edge voice AI solutions. Do you have a few minutes to chat?",
+            "language": "en",
+            "dynamic_variables": {
+                "dynamic_variable_placeholders": {}
+            },
+            "disable_first_message_interruptions": false,
+            "prompt": {
+                "prompt": "# Personality\n\nYou are Alex, a friendly and knowledgeable sales representative for ElevenLabs.\nYou are professional, enthusiastic about AI voice technology, and focused on understanding customer needs.\nYou have deep knowledge about ElevenLabs products and how they can benefit businesses.\n\n# Environment\n\nYou are conducting outbound sales calls to qualify potential leads.\nYou are calling prospects who have shown some interest in AI voice technology or could benefit from ElevenLabs solutions.\nYour goal is to qualify leads and identify opportunities for ElevenLabs products.\n\n# Tone\n\nYour responses are professional, engaging, and consultative.\nYou use a conversational sales tone that builds rapport while gathering information.\nYou avoid being pushy or aggressive, instead focusing on understanding needs and providing value.\nYou ask thoughtful questions to uncover pain points and opportunities.\nYou speak with confidence about ElevenLabs capabilities while remaining humble and customer-focused.\n\n# Goal\n\nYour primary goal is to qualify sales leads and identify opportunities for ElevenLabs voice AI solutions.\n\n1. **Lead Qualification**:\n   * Understand the prospect's business and current challenges\n   * Identify pain points related to voice, audio, or customer experience\n   * Assess budget, timeline, and decision-making process\n   * Determine fit for ElevenLabs solutions\n\n2. **Needs Discovery**:\n   * Ask about current voice/audio solutions they use\n   * Understand their customer base and use cases\n   * Identify specific problems ElevenLabs could solve\n   * Gauge interest level and readiness to move forward\n\n3. **Value Proposition**:\n   * Share relevant ElevenLabs capabilities based on their needs\n   * Provide specific examples of how ElevenLabs helps similar businesses\n   * Highlight key differentiators like voice quality, latency, and ease of integration\n   * Discuss ROI and business impact\n\n4. **Next Steps**:\n   * Schedule follow-up meetings for qualified prospects\n   * Provide relevant resources and case studies\n   * Connect prospects with technical teams for demos when appropriate\n\n# ElevenLabs Knowledge\n\n**Core Products**:\n- **Text-to-Speech API**: High-quality, natural-sounding voice synthesis\n- **Voice Cloning**: Create custom voices from audio samples\n- **Speech-to-Speech**: Real-time voice conversion technology\n- **Conversational AI**: Full voice AI agents and assistants\n- **Voice Library**: Access to professional voice actors and pre-made voices\n\n**Key Benefits**:\n- Ultra-realistic voice quality that's indistinguishable from human speech\n- Low latency for real-time applications\n- Multilingual support with 30+ languages\n- Easy API integration with comprehensive SDKs\n- Enterprise-grade security and compliance\n- Scalable infrastructure handling billions of characters monthly\n\n**Common Use Cases**:\n- Customer service automation and IVR systems\n- Content creation (audiobooks, podcasts, marketing videos)\n- Gaming and entertainment (character voices, narration)\n- Accessibility solutions (screen readers, voice assistants)\n- Educational content and e-learning platforms\n- Marketing and advertising campaigns\n\n**Competitive Advantages**:\n- Industry-leading voice quality and naturalness\n- Fastest inference times in the market\n- Most comprehensive multilingual support\n- Advanced voice cloning with minimal training data\n- Robust API with 99.9% uptime SLA\n\n# Guardrails\n\nStay focused on understanding customer needs and ElevenLabs solutions.\nNever make unrealistic promises or commitments about pricing, timelines, or capabilities.\nIf asked about specific technical details beyond your knowledge, offer to connect them with technical experts.\nRespect prospect's time and be willing to schedule follow-ups if they're busy.\nMaintain professionalism even if prospects are not interested.\nDon't share confidential customer information or competitive intelligence.\nIf prospects ask about competitors, focus on ElevenLabs strengths rather than criticizing others.\n\n# Call Flow\n\n1. **Opening**: Warm greeting, introduction, and permission to continue\n2. **Discovery**: Ask about their business, current challenges, and voice/audio needs\n3. **Qualification**: Assess budget, timeline, decision process, and technical requirements\n4. **Value Delivery**: Share relevant ElevenLabs capabilities and success stories\n5. **Next Steps**: Propose appropriate follow-up actions based on interest level\n6. **Closing**: Thank them for their time and confirm next steps\n\nSuccess is measured by qualified leads generated, meetings scheduled, and opportunities identified for the sales team.\n",
+                "llm": "gemini-2.0-flash",
+                "reasoning_effort": null,
+                "temperature": 0.3,
+                "max_tokens": -1,
+                "tool_ids": [],
+                "built_in_tools": {
+                    "language_detection": {
+                        "type": "system",
+                        "name": "language_detection",
+                        "description": "",
+                        "response_timeout_secs": 20,
+                        "disable_interruptions": false,
+                        "force_pre_tool_speech": false,
+                        "assignments": [],
+                        "params": {
+                            "system_tool_type": "language_detection"
+                        }
+                    }
+                },
+                "mcp_server_ids": [],
+                "native_mcp_server_ids": [],
+                "knowledge_base": [
+                    {
+                        "type": "url",
+                        "name": "ElevenLabs - AI Voice Generator",
+                        "id": "elevenlabs_main_site",
+                        "url": "https://elevenlabs.io/",
+                        "usage_mode": "auto"
+                    }
+                ],
+                "ignore_default_personality": false,
+                "rag": {
+                    "enabled": true,
+                    "embedding_model": "e5_mistral_7b_instruct",
+                    "max_vector_distance": 0.6,
+                    "max_documents_length": 50000,
+                    "max_retrieved_rag_chunks_count": 20
+                },
+                "tools": [
+                    {
+                        "type": "system",
+                        "name": "language_detection",
+                        "description": "",
+                        "response_timeout_secs": 20,
+                        "disable_interruptions": false,
+                        "force_pre_tool_speech": false,
+                        "assignments": [],
+                        "params": {
+                            "system_tool_type": "language_detection"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "platform_settings": {
+        "auth": {
+            "enable_auth": true,
+            "allowlist": []
+        },
+        "evaluation": {
+            "criteria": [
+                {
+                    "name": "Lead Qualification",
+                    "description": "Agent successfully identifies prospect's business needs, budget, timeline, and decision-making process"
+                },
+                {
+                    "name": "Product Knowledge",
+                    "description": "Agent demonstrates accurate knowledge of ElevenLabs products and capabilities"
+                },
+                {
+                    "name": "Value Communication",
+                    "description": "Agent effectively communicates relevant value propositions based on prospect needs"
+                },
+                {
+                    "name": "Professional Tone",
+                    "description": "Agent maintains professional, consultative tone throughout the conversation"
+                },
+                {
+                    "name": "Next Steps",
+                    "description": "Agent proposes appropriate next steps based on prospect interest and qualification level"
+                }
+            ]
+        },
+        "widget": {
+            "variant": "full",
+            "placement": "bottom-right",
+            "expandable": "never",
+            "avatar": {
+                "type": "orb",
+                "color1": "#6366f1",
+                "color2": "#8b5cf6"
+            },
+            "feedback_mode": "after",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "btn_color": "#6366f1",
+            "btn_text_color": "#ffffff",
+            "border_color": "#e1e1e1",
+            "focus_color": "#6366f1",
+            "shareable_page_show_terms": true,
+            "terms_text": "#### Terms and conditions\n\nBy clicking \"Agree,\" and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as described in the Privacy Policy.\nIf you do not wish to have your conversations recorded, please refrain from using this service.",
+            "terms_html": "<h4>Terms and conditions</h4>\n<p>By clicking &quot;Agree,&quot; and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as described in the Privacy Policy.\nIf you do not wish to have your conversations recorded, please refrain from using this service.</p>\n",
+            "show_avatar_when_collapsed": false,
+            "disable_banner": false,
+            "mic_muting_enabled": false,
+            "transcript_enabled": true,
+            "text_input_enabled": true,
+            "default_expanded": false,
+            "always_expanded": false,
+            "text_contents": {
+                "main_label": "Sales Inquiry",
+                "start_call": "Start Call"
+            },
+            "styles": {
+                "base": "#f8fafc"
+            },
+            "language_selector": false,
+            "supports_text_only": true,
+            "language_presets": {}
+        },
+        "data_collection": {},
+        "overrides": {
+            "conversation_config_override": {
+                "tts": {
+                    "voice_id": false,
+                    "stability": false,
+                    "speed": false,
+                    "similarity_boost": false
+                },
+                "conversation": {
+                    "text_only": false
+                },
+                "agent": {
+                    "first_message": false,
+                    "language": true,
+                    "prompt": {
+                        "prompt": false,
+                        "native_mcp_server_ids": false
+                    }
+                }
+            },
+            "custom_llm_extra_body": false,
+            "enable_conversation_initiation_client_data_from_webhook": false
+        },
+        "call_limits": {
+            "agent_concurrency_limit": -1,
+            "daily_limit": 50000,
+            "bursting_enabled": true
+        },
+        "ban": null,
+        "privacy": {
+            "record_voice": true,
+            "retention_days": 30,
+            "delete_transcript_and_pii": false,
+            "delete_audio": false,
+            "apply_to_existing_conversations": false,
+            "zero_retention_mode": false
+        },
+        "workspace_overrides": {
+            "webhooks": {
+                "send_audio": false
+            }
+        },
+        "testing": {
+            "attached_tests": [],
+            "referenced_tests_ids": []
+        },
+        "safety": {
+            "is_blocked_ivc": false,
+            "is_blocked_non_ivc": false,
+            "ignore_safety_evaluation": false
+        }
+    },
+    "tags": ["sales", "outbound", "lead-qualification"]
+}

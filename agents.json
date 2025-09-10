@@ -3,6 +3,10 @@
         {
             "name": "Store Assistant",
             "config": "agent_configs/store_assistant.json"
+        },
+        {
+            "name": "Sales Outbound Agent",
+            "config": "agent_configs/sales_outbound.json"
         }
     ]
 }
