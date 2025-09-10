@@ -108,24 +108,34 @@
         "evaluation": {
             "criteria": [
                 {
+                    "id": "lead_qualification",
                     "name": "Lead Qualification",
-                    "description": "Agent successfully identifies prospect's business needs, budget, timeline, and decision-making process"
+                    "description": "Agent successfully identifies prospect's business needs, budget, timeline, and decision-making process",
+                    "conversationGoalPrompt": "Did the agent successfully gather key qualification information including business needs, budget range, timeline, and decision-making process?"
                 },
                 {
+                    "id": "product_knowledge",
                     "name": "Product Knowledge",
-                    "description": "Agent demonstrates accurate knowledge of ElevenLabs products and capabilities"
+                    "description": "Agent demonstrates accurate knowledge of ElevenLabs products and capabilities",
+                    "conversationGoalPrompt": "Did the agent demonstrate accurate and comprehensive knowledge of ElevenLabs products, features, and capabilities?"
                 },
                 {
+                    "id": "value_communication",
                     "name": "Value Communication",
-                    "description": "Agent effectively communicates relevant value propositions based on prospect needs"
+                    "description": "Agent effectively communicates relevant value propositions based on prospect needs",
+                    "conversationGoalPrompt": "Did the agent effectively communicate relevant value propositions and benefits tailored to the prospect's specific needs?"
                 },
                 {
+                    "id": "professional_tone",
                     "name": "Professional Tone",
-                    "description": "Agent maintains professional, consultative tone throughout the conversation"
+                    "description": "Agent maintains professional, consultative tone throughout the conversation",
+                    "conversationGoalPrompt": "Did the agent maintain a professional, consultative, and engaging tone throughout the entire conversation?"
                 },
                 {
+                    "id": "next_steps",
                     "name": "Next Steps",
-                    "description": "Agent proposes appropriate next steps based on prospect interest and qualification level"
+                    "description": "Agent proposes appropriate next steps based on prospect interest and qualification level",
+                    "conversationGoalPrompt": "Did the agent propose clear and appropriate next steps based on the prospect's interest level and qualification?"
                 }
             ]
         },
@@ -138,7 +148,7 @@
                 "color1": "#6366f1",
                 "color2": "#8b5cf6"
             },
-            "feedback_mode": "after",
+            "feedback_mode": "during",
             "bg_color": "#ffffff",
             "text_color": "#000000",
             "btn_color": "#6366f1",
