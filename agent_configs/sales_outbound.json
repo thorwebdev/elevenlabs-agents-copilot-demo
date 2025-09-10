@@ -66,15 +66,7 @@
                 },
                 "mcp_server_ids": [],
                 "native_mcp_server_ids": [],
-                "knowledge_base": [
-                    {
-                        "type": "url",
-                        "name": "ElevenLabs - AI Voice Generator",
-                        "id": "elevenlabs_main_site",
-                        "url": "https://elevenlabs.io/",
-                        "usage_mode": "auto"
-                    }
-                ],
+                "knowledge_base": [],
                 "ignore_default_personality": false,
                 "rag": {
                     "enabled": true,
