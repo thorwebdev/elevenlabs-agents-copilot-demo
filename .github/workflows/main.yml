@@ -3,8 +3,6 @@ name: Main Branch CI/CD
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   validate-configs:
@@ -12,6 +10,9 @@ jobs:
     name: Validate Agent Configurations
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Deploy ConvAI agents
         run: |
           npm install -g @elevenlabs/convai-cli
