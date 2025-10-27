@@ -1,12 +1,14 @@
 {
     "agents": [
         {
-            "name": "Store Assistant",
-            "config": "agent_configs/store_assistant.json"
+            "config": "agent_configs/Sales-Outbound-Agent.json",
+            "id": "agent_0301k4trm5taftbbk9fqm7dwd7hc",
+            "env": "prod"
         },
         {
-            "name": "Sales Outbound Agent",
-            "config": "agent_configs/sales_outbound.json"
+            "config": "agent_configs/Store-Assistant.json",
+            "id": "agent_0401k4azvgw3fg8r5h1apm9e2r5m",
+            "env": "prod"
         }
     ]
 }

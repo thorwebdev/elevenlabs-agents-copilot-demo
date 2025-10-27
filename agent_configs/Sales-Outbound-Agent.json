@@ -10,7 +10,8 @@
         "turn": {
             "turn_timeout": 7,
             "silence_end_call_timeout": -1,
-            "mode": "turn"
+            "mode": "turn",
+            "turn_eagerness": "normal"
         },
         "tts": {
             "model_id": "eleven_turbo_v2",
@@ -36,6 +37,9 @@
             ]
         },
         "language_presets": {},
+        "vad": {
+            "background_voice_detection": false
+        },
         "agent": {
             "first_message": "Hi! This is Alex from ElevenLabs. I hope I'm catching you at a good time. I'm reaching out because I noticed your interest in AI voice technology. I'd love to share how ElevenLabs can help transform your business with our cutting-edge voice AI solutions. Do you have a few minutes to chat?",
             "language": "en",
@@ -46,7 +50,6 @@
             "prompt": {
                 "prompt": "# Personality\n\nYou are Alex, a friendly and knowledgeable sales representative for ElevenLabs.\nYou are professional, enthusiastic about AI voice technology, and focused on understanding customer needs.\nYou have deep knowledge about ElevenLabs products and how they can benefit businesses.\n\n# Environment\n\nYou are conducting outbound sales calls to qualify potential leads.\nYou are calling prospects who have shown some interest in AI voice technology or could benefit from ElevenLabs solutions.\nYour goal is to qualify leads and identify opportunities for ElevenLabs products.\n\n# Tone\n\nYour responses are professional, engaging, and consultative.\nYou use a conversational sales tone that builds rapport while gathering information.\nYou avoid being pushy or aggressive, instead focusing on understanding needs and providing value.\nYou ask thoughtful questions to uncover pain points and opportunities.\nYou speak with confidence about ElevenLabs capabilities while remaining humble and customer-focused.\n\n# Goal\n\nYour primary goal is to qualify sales leads and identify opportunities for ElevenLabs voice AI solutions.\n\n1. **Lead Qualification**:\n   * Understand the prospect's business and current challenges\n   * Identify pain points related to voice, audio, or customer experience\n   * Assess budget, timeline, and decision-making process\n   * Determine fit for ElevenLabs solutions\n\n2. **Needs Discovery**:\n   * Ask about current voice/audio solutions they use\n   * Understand their customer base and use cases\n   * Identify specific problems ElevenLabs could solve\n   * Gauge interest level and readiness to move forward\n\n3. **Value Proposition**:\n   * Share relevant ElevenLabs capabilities based on their needs\n   * Provide specific examples of how ElevenLabs helps similar businesses\n   * Highlight key differentiators like voice quality, latency, and ease of integration\n   * Discuss ROI and business impact\n\n4. **Next Steps**:\n   * Schedule follow-up meetings for qualified prospects\n   * Provide relevant resources and case studies\n   * Connect prospects with technical teams for demos when appropriate\n\n# ElevenLabs Knowledge\n\n**Core Products**:\n- **Text-to-Speech API**: High-quality, natural-sounding voice synthesis\n- **Voice Cloning**: Create custom voices from audio samples\n- **Speech-to-Speech**: Real-time voice conversion technology\n- **Conversational AI**: Full voice AI agents and assistants\n- **Voice Library**: Access to professional voice actors and pre-made voices\n\n**Key Benefits**:\n- Ultra-realistic voice quality that's indistinguishable from human speech\n- Low latency for real-time applications\n- Multilingual support with 30+ languages\n- Easy API integration with comprehensive SDKs\n- Enterprise-grade security and compliance\n- Scalable infrastructure handling billions of characters monthly\n\n**Common Use Cases**:\n- Customer service automation and IVR systems\n- Content creation (audiobooks, podcasts, marketing videos)\n- Gaming and entertainment (character voices, narration)\n- Accessibility solutions (screen readers, voice assistants)\n- Educational content and e-learning platforms\n- Marketing and advertising campaigns\n\n**Competitive Advantages**:\n- Industry-leading voice quality and naturalness\n- Fastest inference times in the market\n- Most comprehensive multilingual support\n- Advanced voice cloning with minimal training data\n- Robust API with 99.9% uptime SLA\n\n# Guardrails\n\nStay focused on understanding customer needs and ElevenLabs solutions.\nNever make unrealistic promises or commitments about pricing, timelines, or capabilities.\nIf asked about specific technical details beyond your knowledge, offer to connect them with technical experts.\nRespect prospect's time and be willing to schedule follow-ups if they're busy.\nMaintain professionalism even if prospects are not interested.\nDon't share confidential customer information or competitive intelligence.\nIf prospects ask about competitors, focus on ElevenLabs strengths rather than criticizing others.\n\n# Call Flow\n\n1. **Opening**: Warm greeting, introduction, and permission to continue\n2. **Discovery**: Ask about their business, current challenges, and voice/audio needs\n3. **Qualification**: Assess budget, timeline, decision process, and technical requirements\n4. **Value Delivery**: Share relevant ElevenLabs capabilities and success stories\n5. **Next Steps**: Propose appropriate follow-up actions based on interest level\n6. **Closing**: Thank them for their time and confirm next steps\n\nSuccess is measured by qualified leads generated, meetings scheduled, and opportunities identified for the sales team.\n",
                 "llm": "gemini-2.0-flash",
-                "reasoning_effort": null,
                 "temperature": 0.3,
                 "max_tokens": -1,
                 "tool_ids": [],
@@ -59,6 +62,8 @@
                         "disable_interruptions": false,
                         "force_pre_tool_speech": false,
                         "assignments": [],
+                        "tool_call_sound": null,
+                        "tool_call_sound_behavior": "auto",
                         "params": {
                             "system_tool_type": "language_detection"
                         }
@@ -75,6 +80,9 @@
                     "max_documents_length": 50000,
                     "max_retrieved_rag_chunks_count": 20
                 },
+                "backup_llm_config": {
+                    "preference": "default"
+                },
                 "tools": [
                     {
                         "type": "system",
@@ -84,6 +92,8 @@
                         "disable_interruptions": false,
                         "force_pre_tool_speech": false,
                         "assignments": [],
+                        "tool_call_sound": null,
+                        "tool_call_sound_behavior": "auto",
                         "params": {
                             "system_tool_type": "language_detection"
                         }
@@ -93,41 +103,42 @@
         }
     },
     "platform_settings": {
-        "auth": {
-            "enable_auth": true,
-            "allowlist": []
-        },
         "evaluation": {
             "criteria": [
                 {
                     "id": "lead_qualification",
                     "name": "Lead Qualification",
-                    "description": "Agent successfully identifies prospect's business needs, budget, timeline, and decision-making process",
-                    "conversationGoalPrompt": "Did the agent successfully gather key qualification information including business needs, budget range, timeline, and decision-making process?"
+                    "type": "prompt",
+                    "conversation_goal_prompt": "Did the agent successfully gather key qualification information including business needs, budget range, timeline, and decision-making process?",
+                    "use_knowledge_base": false
                 },
                 {
                     "id": "product_knowledge",
                     "name": "Product Knowledge",
-                    "description": "Agent demonstrates accurate knowledge of ElevenLabs products and capabilities",
-                    "conversationGoalPrompt": "Did the agent demonstrate accurate and comprehensive knowledge of ElevenLabs products, features, and capabilities?"
+                    "type": "prompt",
+                    "conversation_goal_prompt": "Did the agent demonstrate accurate and comprehensive knowledge of ElevenLabs products, features, and capabilities?",
+                    "use_knowledge_base": false
                 },
                 {
                     "id": "value_communication",
                     "name": "Value Communication",
-                    "description": "Agent effectively communicates relevant value propositions based on prospect needs",
-                    "conversationGoalPrompt": "Did the agent effectively communicate relevant value propositions and benefits tailored to the prospect's specific needs?"
+                    "type": "prompt",
+                    "conversation_goal_prompt": "Did the agent effectively communicate relevant value propositions and benefits tailored to the prospect's specific needs?",
+                    "use_knowledge_base": false
                 },
                 {
                     "id": "professional_tone",
                     "name": "Professional Tone",
-                    "description": "Agent maintains professional, consultative tone throughout the conversation",
-                    "conversationGoalPrompt": "Did the agent maintain a professional, consultative, and engaging tone throughout the entire conversation?"
+                    "type": "prompt",
+                    "conversation_goal_prompt": "Did the agent maintain a professional, consultative, and engaging tone throughout the entire conversation?",
+                    "use_knowledge_base": false
                 },
                 {
                     "id": "next_steps",
                     "name": "Next Steps",
-                    "description": "Agent proposes appropriate next steps based on prospect interest and qualification level",
-                    "conversationGoalPrompt": "Did the agent propose clear and appropriate next steps based on the prospect's interest level and qualification?"
+                    "type": "prompt",
+                    "conversation_goal_prompt": "Did the agent propose clear and appropriate next steps based on the prospect's interest level and qualification?",
+                    "use_knowledge_base": false
                 }
             ]
         },
@@ -185,12 +196,81 @@
                     "language": true,
                     "prompt": {
                         "prompt": false,
+                        "llm": false,
                         "native_mcp_server_ids": false
                     }
                 }
             },
             "custom_llm_extra_body": false,
             "enable_conversation_initiation_client_data_from_webhook": false
+        },
+        "workspace_overrides": {
+            "webhooks": {
+                "events": [
+                    "transcript"
+                ],
+                "send_audio": false
+            }
+        },
+        "testing": {
+            "attached_tests": [],
+            "referenced_tests_ids": []
+        },
+        "archived": false,
+        "guardrails": {
+            "version": "1",
+            "moderation": {
+                "config": {
+                    "sexual": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "violence": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "violence_graphic": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "harassment": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "harassment_threatening": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "hate": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "hate_threatening": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "self_harm_instructions": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "self_harm": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "self_harm_intent": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    },
+                    "sexual_minors": {
+                        "is_enabled": false,
+                        "threshold": 0.3
+                    }
+                }
+            }
+        },
+        "auth": {
+            "enable_auth": true,
+            "allowlist": []
         },
         "call_limits": {
             "agent_concurrency_limit": -1,
@@ -206,20 +286,16 @@
             "apply_to_existing_conversations": false,
             "zero_retention_mode": false
         },
-        "workspace_overrides": {
-            "webhooks": {
-                "send_audio": false
-            }
-        },
-        "testing": {
-            "attached_tests": [],
-            "referenced_tests_ids": []
-        },
         "safety": {
             "is_blocked_ivc": false,
             "is_blocked_non_ivc": false,
             "ignore_safety_evaluation": false
         }
     },
-    "tags": ["sales", "outbound", "lead-qualification"]
+    "tags": [
+        "sales",
+        "outbound",
+        "lead-qualification",
+        "prod"
+    ]
 }
