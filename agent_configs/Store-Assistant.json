@@ -40,23 +40,23 @@
             "es": {
                 "overrides": {
                     "agent": {
-                        "first_message": "¡Hola! Puedo ayudarte a rastrear tu pedido o responder las preguntas que puedas tener."
+                        "first_message": "¡Hola! Puedo ayudarte a rastrear tu pedido, agregar artículos al carrito, obtener información del tiempo, o responder las preguntas que puedas tener."
                     }
                 },
                 "first_message_translation": {
-                    "source_hash": "{\"firstMessage\":\"Hi there! I can help you track your order or answer questions you might have.\",\"language\":\"en\"}",
-                    "text": "¡Hola! Puedo ayudarte a rastrear tu pedido o responder las preguntas que puedas tener."
+                    "source_hash": "{\"firstMessage\":\"Hi there! I can help you track your order, add items to the cart, get weather information, or answer questions you might have.\",\"language\":\"en\"}",
+                    "text": "¡Hola! Puedo ayudarte a rastrear tu pedido, agregar artículos al carrito, obtener información del tiempo, o responder las preguntas que puedas tener."
                 }
             },
             "pt_br": {
                 "overrides": {
                     "agent": {
-                        "first_message": "Olá! Posso ajudar você a rastrear seu pedido ou responder a perguntas que você possa ter."
+                        "first_message": "Olá! Posso ajudar você a rastrear seu pedido, adicionar itens ao carrinho, obter informações meteorológicas, ou responder a perguntas que você possa ter."
                     }
                 },
                 "first_message_translation": {
-                    "source_hash": "{\"firstMessage\":\"Hi there! I can help you track your order or answer questions you might have.\",\"language\":\"en\"}",
-                    "text": "Olá! Posso ajudar você a rastrear seu pedido ou responder a perguntas que você possa ter."
+                    "source_hash": "{\"firstMessage\":\"Hi there! I can help you track your order, add items to the cart, get weather information, or answer questions you might have.\",\"language\":\"en\"}",
+                    "text": "Olá! Posso ajudar você a rastrear seu pedido, adicionar itens ao carrinho, obter informações meteorológicas, ou responder a perguntas que você possa ter."
                 }
             }
         },
