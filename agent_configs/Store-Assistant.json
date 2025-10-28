@@ -182,17 +182,19 @@
                             "url": "https://api.open-meteo.com/v1/forecast?current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
                             "method": "GET",
                             "query_params_schema": {
-                                "latitude": {
-                                    "type": "number",
-                                    "description": "The latitude coordinate of the location (e.g., 52.52 for Berlin)",
-                                    "dynamic_variable": "",
-                                    "constant_value": ""
-                                },
-                                "longitude": {
-                                    "type": "number",
-                                    "description": "The longitude coordinate of the location (e.g., 13.41 for Berlin)",
-                                    "dynamic_variable": "",
-                                    "constant_value": ""
+                                "properties": {
+                                    "latitude": {
+                                        "type": "number",
+                                        "description": "The latitude coordinate of the location (e.g., 52.52 for Berlin)",
+                                        "dynamic_variable": "",
+                                        "constant_value": ""
+                                    },
+                                    "longitude": {
+                                        "type": "number",
+                                        "description": "The longitude coordinate of the location (e.g., 13.41 for Berlin)",
+                                        "dynamic_variable": "",
+                                        "constant_value": ""
+                                    }
                                 }
                             },
                             "request_headers": {}
