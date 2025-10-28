@@ -154,11 +154,13 @@
                             "url": "https://v0-ecommerce-business-page.vercel.app/api/orders/{order_id}",
                             "method": "GET",
                             "path_params_schema": {
-                                "order_id": {
-                                    "type": "string",
-                                    "description": "ask user for order number. only use full integers",
-                                    "dynamic_variable": "",
-                                    "constant_value": ""
+                                "properties": {
+                                    "order_id": {
+                                        "type": "string",
+                                        "description": "ask user for order number. only use full integers",
+                                        "dynamic_variable": "",
+                                        "constant_value": ""
+                                    }
                                 }
                             },
                             "request_headers": {}
