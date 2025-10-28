@@ -154,13 +154,11 @@
                             "url": "https://v0-ecommerce-business-page.vercel.app/api/orders/{order_id}",
                             "method": "GET",
                             "path_params_schema": {
-                                "properties": {
-                                    "order_id": {
-                                        "type": "string",
-                                        "description": "ask user for order number. only use full integers",
-                                        "dynamic_variable": "",
-                                        "constant_value": ""
-                                    }
+                                "order_id": {
+                                    "type": "string",
+                                    "description": "ask user for order number. only use full integers",
+                                    "dynamic_variable": "",
+                                    "constant_value": ""
                                 }
                             },
                             "request_headers": {}
@@ -183,7 +181,7 @@
                         "api_schema": {
                             "url": "https://api.open-meteo.com/v1/forecast?current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
                             "method": "GET",
-                            "query_params_schema": {
+                            "path_params_schema": {
                                 "properties": {
                                     "latitude": {
                                         "type": "number",
