@@ -39,12 +39,12 @@
                 "dynamic_variable_placeholders": {}
             },
             "prompt": {
-                "prompt": "You are My Assistant, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, and creative tasks.",
+                "prompt": "You are My Assistant, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, and creative tasks. You have access to weather information and can provide current weather forecasts for any location.",
                 "llm": "gemini-2.0-flash",
                 "temperature": 0.3,
                 "max_tokens": 1000,
                 "tools": [],
-                "tool_ids": [],
+                "tool_ids": ["tool_3001k8p3p49zezht4kjm220b0cng"],
                 "mcp_server_ids": [],
                 "native_mcp_server_ids": [],
                 "knowledge_base": [],
