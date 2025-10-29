@@ -75,12 +75,7 @@
         "llm": "gemini-2.0-flash",
         "temperature": 0,
         "max_tokens": -1,
-        "tool_ids": [
-          "tool_3001k8p3p49zezht4kjm220b0cng",
-          "tool_3501k57g9sw0f1gs0jcs1y9p4vbe",
-          "tool_7101k57g4y9bf24azke4dhqw103e",
-          "tool_0501k4r2weqwetzvzs6ws1zg2056"
-        ],
+        "tool_ids": [],
         "built_in_tools": {
           "end_call": {
             "type": "system",
