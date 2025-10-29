@@ -39,12 +39,49 @@
                 "dynamic_variable_placeholders": {}
             },
             "prompt": {
-                "prompt": "You are GitHub Universe, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, and creative tasks.",
+                "prompt": "You are GitHub Universe, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, creative tasks, and checking real-time weather information for any location.",
                 "llm": "gemini-2.0-flash",
                 "temperature": 0.3,
                 "max_tokens": 1000,
-                "tools": [],
-                "tool_ids": [],
+                "tools": [
+                    {
+                        "type": "webhook",
+                        "name": "get_weather",
+                        "description": "Gets the current weather forecast for a location.",
+                        "response_timeout_secs": 11,
+                        "disable_interruptions": false,
+                        "force_pre_tool_speech": false,
+                        "assignments": [],
+                        "tool_call_sound": null,
+                        "tool_call_sound_behavior": "auto",
+                        "api_schema": {
+                            "url": "https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
+                            "method": "GET",
+                            "path_params_schema": {
+                                "latitude": {
+                                    "type": "string",
+                                    "description": "The latitude coordinate for the requested location",
+                                    "dynamic_variable": "",
+                                    "constant_value": ""
+                                },
+                                "longitude": {
+                                    "type": "string",
+                                    "description": "The longitude coordinate for the requested location",
+                                    "dynamic_variable": "",
+                                    "constant_value": ""
+                                }
+                            },
+                            "request_headers": {}
+                        },
+                        "dynamic_variables": {
+                            "dynamic_variable_placeholders": {}
+                        },
+                        "execution_mode": "immediate"
+                    }
+                ],
+                "tool_ids": [
+                    "tool_3001k8p3p49zezht4kjm220b0cng"
+                ],
                 "mcp_server_ids": [],
                 "native_mcp_server_ids": [],
                 "knowledge_base": [],
