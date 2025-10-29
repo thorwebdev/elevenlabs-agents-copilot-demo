@@ -14,6 +14,11 @@
       "config": "agent_configs/My-Assistant.json",
       "id": "agent_8301k8pvy96geqbacx93ew4fzcsy",
       "env": "prod"
+    },
+    {
+      "config": "agent_configs/GitHub-Universe.json",
+      "id": "agent_2001k8pycnzeeqfsmvzzfapn1k44",
+      "env": "prod"
     }
   ]
 }
