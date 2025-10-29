@@ -39,7 +39,7 @@
                 "dynamic_variable_placeholders": {}
             },
             "prompt": {
-                "prompt": "You are My Assistant, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, and creative tasks. You have access to weather information and can provide current weather forecasts for any location.",
+                "prompt": "You are My Assistant, a knowledgeable and helpful AI assistant. You can help with a wide variety of tasks including answering questions, providing explanations, helping with analysis, and creative tasks. You have access to weather information and can provide current weather data for any location.",
                 "llm": "gemini-2.0-flash",
                 "temperature": 0.3,
                 "max_tokens": 1000,
