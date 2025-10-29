@@ -1,14 +1,19 @@
 {
-    "agents": [
-        {
-            "config": "agent_configs/Sales-Outbound-Agent.json",
-            "id": "agent_0301k4trm5taftbbk9fqm7dwd7hc",
-            "env": "prod"
-        },
-        {
-            "config": "agent_configs/Store-Assistant.json",
-            "id": "agent_0401k4azvgw3fg8r5h1apm9e2r5m",
-            "env": "prod"
-        }
-    ]
+  "agents": [
+    {
+      "config": "agent_configs/Sales-Outbound-Agent.json",
+      "id": "agent_0301k4trm5taftbbk9fqm7dwd7hc",
+      "env": "prod"
+    },
+    {
+      "config": "agent_configs/Store-Assistant.json",
+      "id": "agent_0401k4azvgw3fg8r5h1apm9e2r5m",
+      "env": "prod"
+    },
+    {
+      "config": "agent_configs/My-Assistant.json",
+      "id": "agent_8301k8pvy96geqbacx93ew4fzcsy",
+      "env": "prod"
+    }
+  ]
 }
